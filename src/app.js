@@ -1,5 +1,6 @@
 import express from 'express';
 import defaultRouter from './routers/default.routes.js';
+import winesRouter from './routers/wines.routes.js';
 
 //configure Express.js app
 const app = express();
@@ -17,5 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 
 //routers
 app.use("/", defaultRouter);
+
+app.use('/wines', winesRouter);
 
 export default app;
